@@ -36,6 +36,7 @@ function About() {
                         {/* CV İndir Butonu (Mavi) */}
                         <a
                             href="/cv.pdf" // CV dosyanın yolu
+                            download="Berk_Ali_Meral_CV"
                             className="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
                         >
                             <FiDownload /> CV İndir
