@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
+/* 1. TEMA DEĞİŞKENLERİ */
 :root {
+  /* --- LIGHT MODE (AÇIK TEMA) --- */
+  /* Arka plan bembeyaz */
   --background: #ffffff;
-  --foreground: #171717;
+  /* Yazılar çok koyu gri (neredeyse siyah) */
+  --foreground: #0f1115;
+
+  /* Kartlar çok açık gri */
+  --card: #f3f4f6;
+  /* Kenarlıklar belirgin gri */
+  --border: #e5e7eb;
+
+  /* Vurgu rengi aynı kalabilir veya biraz koyulaşabilir */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+
+  /* İkincil yazılar gri */
+  --muted: #6b7280;
 }
 
+/* --- DARK MODE (SENİN MEVCUT RENKLERİN) --- */
+/* .dark class'ı html'e eklendiğinde bu renkler devreye girer */
+.dark {
+  --background: #0f1115;
+  --foreground: #ededed;
+  --card: #161b22;
+  --border: #30363d;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --muted: #9ca3af;
+}
+
+/* 2. TAILWIND AYARLARI */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 3. GENEL STİLLER */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  antialiased: var(--background);
+  /* Renk geçişleri yumuşak olsun */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
