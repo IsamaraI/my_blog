@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import { client } from '../../sanity/lib/client'; // Sanity client yolunu ayarla
-import { FiArrowRight } from 'react-icons/fi';
 import BlogList from './ui/BlogList';
 
 // Sanity'den son 3 yazıyı çeken sorgu
